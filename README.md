@@ -2,7 +2,7 @@
 
 # ⚡ Trade-Agent
 
-**AI 驱动的加密货币期货量化交易系统**
+**AI 驱动期货量化交易系统**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-MultiAgent-FF6B35?style=flat-square)](https://github.com/langchain-ai/langgraph)
@@ -288,7 +288,7 @@ trade-agent/
 
 ## 风险提示
 
-> **重要声明**：本项目仅供学习和研究使用。加密货币交易具有极高风险，AI 模型的分析结果不构成投资建议。在使用实盘交易功能前，请充分了解相关风险，并在模拟盘充分测试后谨慎操作。作者不对任何交易损失承担责任。
+> **重要声明**：本项目仅供学习和研究使用。交易具有极高风险，AI 模型的分析结果不构成投资建议。在使用实盘交易功能前，请充分了解相关风险，并在模拟盘充分测试后谨慎操作。作者不对任何交易损失承担责任。
 
 **强烈建议：**
 - 首次使用请将 `flag` 设置为 `"1"`（模拟盘）
