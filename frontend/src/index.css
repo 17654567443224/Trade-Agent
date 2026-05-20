@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+  /* 隐藏滚动条但保留滚动功能（横向 symbol 列表） */
+  .scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+@layer utilities {
+  .text-up      { color: #3fb950; }
+  .text-down    { color: #f85149; }
+  .text-neutral { color: #e3b341; }
+
+  /* 卡片内统一边框顶部强调色线条 */
+  .card-accent-blue   { border-top: 2px solid #58a6ff; }
+  .card-accent-green  { border-top: 2px solid #3fb950; }
+  .card-accent-yellow { border-top: 2px solid #e3b341; }
+  .card-accent-red    { border-top: 2px solid #f85149; }
+  .card-accent-purple { border-top: 2px solid #bc8cff; }
+}

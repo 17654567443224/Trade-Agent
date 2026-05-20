@@ -1,0 +1,20 @@
+max_positions: 5  # 最大持仓数
+max_position_pct: 0.2  # 单个最大持仓20%
+max_drawdown_pct: 0.45  # 回撤熔断线 45%
+max_leverage: 10  # 最大允许杠杆倍数
+max_sl_loss_pct: 0.10  # 止损触发时单笔最大亏损比例（相对保证金），超出则自动修正止损价
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

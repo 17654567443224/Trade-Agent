@@ -1,0 +1,32 @@
+quant_ai_framework/
+├── config/                      # 全局配置
+│   ├── settings.yaml            # 数据源、模型端点、风控阈值
+│   └── prompts/                 # 各角色提示词模板
+│       ├── fundamental_analyst.txt
+│       ├── chart_analyst.txt
+│       └── risk_manager.txt
+├── data/                        # 数据获取与缓存层
+│   ├── market_data_fetcher.py   # 行情接口抽象（akshare/tushare等）
+│   └── fundamental_fetcher.py   # 财报/估值数据
+├── analysts/                    # 大模型分析师模块
+│   ├── base_analyst.py          # 基类：封装LLM调用、报告格式化
+│   ├── fundamental_analyst.py   # 基本面角色，调用基本面数据+提示词
+│   ├── chart_analyst.py         # K线角色，注入OHLCV统计量/形态描述
+│   └──  risk_analyst.py          # 风控角色，读取当前持仓与市场波动率
+├── chief_engineer/              # 总工程师（汇总决策）
+│   ├── aggregator.py            # 读取各角色报告，调用LLM汇总成最终信号
+│   └── decision_schema.py       # 最终决策的标准化输出格式
+├── execution/                   # 执行层与兜底策略
+│   ├── rule_guard.py            # 规则风控（回撤熔断、仓位硬限）
+│   └── fallback_strategy.py     # 兜底策略（如均线交叉信号）
+├── orchestration/               # 调度与编排
+│   ├── daily_workflow.py        # 日频工作流：拉数据→调分析师→汇总→执行
+│   ├── event_driven_runner.py   # 盘中事件驱动（如大幅波动触发临检）
+│   └── task_queue.py            # 可选：Celery/RQ任务队列
+├── utils/                       # 工具函数
+│   ├── llm_client.py            # 统一大模型调用接口（支持OpenAI/本地）
+│   ├── logger.py
+│   └── market_calendar.py       # 交易日历
+├── tests/
+├── logs/
+└── requirements.txt

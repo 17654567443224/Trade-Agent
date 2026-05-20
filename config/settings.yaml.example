@@ -1,0 +1,53 @@
+data:
+  source:
+    crypto:
+      - okx
+      - binance
+  interval:
+    - 1m
+  llm_kline_count: 10
+  save_kline_count: 100
+  warmup_kline_count: 20  # chart 分析师预热所需的最少 K 线数，所有 symbol 都满足后才开始分析
+  compress_every_n: 5  # 每隔多少轮压缩一次上下文
+  reflect_every_n: 5   # 累积多少次有实际交易的轮次后触发一次反思
+  run_interval: 600
+  # 定时运行间隔（秒），默认15分钟
+  symbol_refresh_interval: 3600
+  volatility_atr_multiplier: 1.3   # 紧急分析 ATR 倍数阈值
+  volatility_atr_period: 14         # ATR 计算周期
+  volatility_cooldown: 300          # 同一品种两次触发最小间隔（秒）
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+database:
+  mysql:
+    host: "localhost"
+    port: 3306
+    user: "root"
+    password: ""
+    database: "trade_agent"
+  order_memory_limit: 200   # 内存中保留的最近订单条数（含活跃订单）
+
+execution:
+  webhook_url: ""         # 外部信号接收地址，空则仅用内部 Queue
+  order_max_retries: 3    # 下单失败最大重试次数
+  order_timeout: 120      # 限价单超时未成交秒数，超时后取消并处理
+  drawdown_check_interval: 30  # 实时回撤熔断检测间隔（秒）
+  exchanges:
+    okx:
+      enabled: True
+      api_key: "YOUR_OKX_API_KEY"
+      passphrase: "YOUR_OKX_PASSPHRASE"
+      secret_key: "YOUR_OKX_SECRET_KEY"
+      flag: "1"           # "0"=实盘, "1"=模拟盘
+      td_mode: "isolated"    # cross（全仓）或 isolated（逐仓）
+      ws_url: "wss://wspap.okx.com:8443/ws/v5/private"  # wss://ws.okx.com:8443/ws/v5/private
+    binance:
+      enabled: false
+      api_key: ""
+      secret_key: ""
+      hedge_mode: true    # true=双向持仓（需账户提前开启），false=单向持仓
+      ws_url: "wss://fstream.binance.com"
+      rest_url: "https://fapi.binance.com"

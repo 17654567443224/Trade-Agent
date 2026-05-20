@@ -1,0 +1,37 @@
+llm:
+  general:
+    - bailian
+  fundamental:
+    - bailian
+  chart:
+    - bailian
+  risk:
+    - bailian
+  aggregator:
+    - bailian
+  update:
+    - bailian
+  embedding: bailian
+
+embedding:
+  bailian:
+    model_id: text-embedding-v3
+    api_key: YOUR_BAILIAN_API_KEY
+    url: https://dashscope.aliyuncs.com/compatible-mode/v1
+
+model_supplier:
+  huoshan:
+    model_id:
+      - glm-4-7-251222
+      - doubao-seed-2-0-pro-260215
+      - deepseek-v3-2-251201
+    api_key: YOUR_HUOSHAN_API_KEY
+    url: https://ark.cn-beijing.volces.com/api/v3
+
+  bailian:
+    model_id:
+      - qwen3.5-27b
+      - qwen-max
+      - qwen3.6-plus
+    api_key: YOUR_BAILIAN_API_KEY
+    url: https://dashscope.aliyuncs.com/compatible-mode/v1

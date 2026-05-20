@@ -1,0 +1,9 @@
+[project]
+name = "langchain-skills"
+version = "0.1.0"
+description = "LangChain skills for coding agents - trace querying and dataset generation"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools]
+packages = []

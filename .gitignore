@@ -1,0 +1,48 @@
+# 配置文件（含 API 密钥，不上传）
+config/settings.yaml
+config/llm.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# 日志
+logs/
+*.log
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 数据库 / 持久化
+*.db
+*.sqlite
+*.sqlite3
+
+# 反思向量库（本地生成，不上传）
+reflection_store/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
